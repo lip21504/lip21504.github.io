@@ -1960,14 +1960,7 @@ body {
     .nav-item:hover {
       background: #eee;
       color: rgba(0, 0, 0, 0.98);
-    }.pisces .blog-header, .gemini .blog-header {
-        right: 0;
-      }
-      .pisces .section-layout-wrapper, .gemini .section-layout-wrapper {
-        flex-direction: row-reverse !important;
-      }.pisces .sidebar, .gemini .sidebar {
-        right: 0;
-      }.markdownIt-TOC a {
+    }.markdownIt-TOC a {
       color: #eee;
       border-bottom-color: #eee;
     }.markdownIt-TOC a:hover {
