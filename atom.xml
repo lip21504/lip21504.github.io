@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
-    <title>Gridea</title>
-    <updated>2020-02-12T06:37:59.602Z</updated>
+    <title>ZhouXing</title>
+    <updated>2020-02-12T06:48:58.091Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://lip21504.github.io/images/avatar.png</logo>
     <icon>https://lip21504.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, ZhouXing</rights>
     <entry>
         <title type="html"><![CDATA[基于nodejs建立我的第一个静态博客（一）]]></title>
-        <id>https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke</id>
-        <link href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke">
+        <id>https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi</id>
+        <link href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi">
         </link>
         <updated>2020-02-12T05:52:50.000Z</updated>
         <content type="html"><![CDATA[<p>用nodejs搭建博客是我在b站看一个叫CodeSheep的up主发的教程，（顺便说一句，这个up主相当良心滴！）整个搭建过程都是免费，不用购买域名服务器、主机等乱七八糟的东西。但是在开始之前需要准备一下东西：<br>
