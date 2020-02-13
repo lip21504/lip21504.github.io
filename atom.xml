@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
     <title>ZhouXing</title>
-    <updated>2020-02-13T06:10:52.272Z</updated>
+    <updated>2020-02-13T06:15:39.620Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
@@ -11,33 +11,12 @@
     <icon>https://lip21504.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhouXing</rights>
     <entry>
-        <title type="html"><![CDATA[基于nodejs建立我的第一个博客（一）]]></title>
-        <id>https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-bo-ke-yi</id>
-        <link href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-bo-ke-yi">
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://lip21504.github.io/post/ce-shi</id>
+        <link href="https://lip21504.github.io/post/ce-shi">
         </link>
-        <updated>2020-02-12T05:52:50.000Z</updated>
-        <content type="html"><![CDATA[<p>用nodejs搭建博客是我在b站看一个叫CodeSheep的up主发的教程，（顺便说一句，这个up主相当良心滴！）整个搭建过程都是免费，不用购买域名服务器、主机等乱七八糟的东西。但是在开始之前需要准备一下东西：<br>
-1、首先需要注册自己的github的账号，注册很简单去https://github.com 注册，有些使用win系统的童鞋可能会登不进去，这个问题我文章后续会说。如果登不进去先做下一步😄</p>
-<p>2、其中要用到git for Windows，直接从百度上搜就可以。https://git-scm.com/download/win</p>
-<p>具体步骤如下：<br>
-1、win+r   cmd 打开终端，因为hexo是需要nodejs的支持的，看nodejs的版本及npm（包管理器）的版本<br>
-<img src="https://lip21504.github.io//post-images/1581487804784.png" alt="" loading="lazy"></p>
-<p>2、借助npm包管理器来安装，但是国内镜像元的速度很慢，逆用npm来安装一个cnpm，淘宝的镜像元比较快<br>
-输入这行命令<br>
-<img src="https://lip21504.github.io//post-images/1581488181541.png" alt="" loading="lazy"></p>
-<p>3、安装完之后<br>
-继续输入命令<br>
-<img src="https://lip21504.github.io//post-images/1581488301539.png" alt="" loading="lazy"><br>
-安装完之后的界面<img src="https://lip21504.github.io//post-images/1581488350676.png" alt="" loading="lazy"></p>
-<p>4、建一个新的文件夹，在任何一个盘下叫blog在终端进到这个文件夹里cd blog.之后的所有操作都在这个文件夹下操作的。</p>
-<p>5、用这个命令初始化一个博客<br>
-<img src="https://lip21504.github.io//post-images/1581488621202.png" alt="" loading="lazy"><br>
-如果这部出错了，那就是你没有安装git for Windows</p>
-<p>6、hexo s这条命令就是打开初始化的博客，一般是本地的4000端口，去随便一个浏览器去看就好</p>
-<p>7、写文章的话hexo n一片文章格式如下<br>
-<img src="https://lip21504.github.io//post-images/1581488919412.png" alt="" loading="lazy">然后进到里面<br>
-cd sourse\ _posts\这个目录下dir就可以写了</p>
-<p>8、用户部署github的仓库格式必须是“用户名.github.io“千万不能写别的！！！！后期在浏览器里写这个地址就可以访问了<img src="https://lip21504.github.io//post-images/1581573959046.jpg" alt="" loading="lazy"></p>
+        <updated>2020-02-13T06:15:03.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://lip21504.github.io//post-images/1581574525217.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
