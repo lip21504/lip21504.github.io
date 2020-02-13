@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#222">
-<title>ZhouXing</title>
+<title>基于nodejs建立我的第一个静态博客（一） | ZhouXing</title>
 <link rel="shortcut icon" href="https://lip21504.github.io//favicon.ico?v=1581571269456">
 <link rel="stylesheet" href="https://lip21504.github.io//styles/main.css">
 
@@ -25,6 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
+    <meta name="description" content="基于nodejs建立我的第一个静态博客（一）" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -122,10 +124,16 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div class="sidebar">
-    
+          
+
+<div class="sidebar">
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://lip21504.github.io//images/avatar.png"/>
@@ -203,44 +211,173 @@
   </div>
 
 </div>
-</div>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          Gridea
-          <small>标签</small>
-        </h2>
+        
       </div>
-      
-        
-      
-        
-          
-            <a href="https://lip21504.github.io/post/hello-gridea">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    12-12
-                    <small>Hello Gridea</small>
-                  </h1>
-                </div>  
+    </div>
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+
+  if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+    let hasFix = false;
+    let scrollEl = document.querySelector('.main-continer');
+    let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+    window.addEventListener('scroll', function(e) {
+    if (document.scrollingElement.scrollTop >= limitTop) {
+      if (!hasFix) {
+        sidebar.classList.add('sidebar-fixed');
+        hasFix = true;
+      }
+    } else {
+      if (hasFix) {
+        sidebar.classList.remove('sidebar-fixed');
+        hasFix = false;
+      }
+    }
+  });
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <div class="article-box">
+    <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi">
+      基于nodejs建立我的第一个静态博客（一）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-12</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>468<span class="pc-show">字数</span></span>
+    </span>
+  </div>
+</header>
+</div>
+              <div class="post-body next-md-body" id="post_body">
+                <p>用nodejs搭建博客是我在b站看一个叫CodeSheep的up主发的教程，（顺便说一句，这个up主相当良心滴！）整个搭建过程都是免费，不用购买域名服务器、主机等乱七八糟的东西。但是在开始之前需要准备一下东西：<br>
+1、首先需要注册自己的github的账号，注册很简单去https://github.com 注册，有些使用win系统的童鞋可能会登不进去，这个问题我文章后续会说。如果登不进去先做下一步😄</p>
+<p>2、其中要用到git for Windows，直接从百度上搜就可以。https://git-scm.com/download/win</p>
+<p>具体步骤如下：<br>
+1、打开终端，hexo是需要nodejs的支持的，看nodejs的版本及npm（包管理器）的版本确认已经安装<br>
+<img src="https://lip21504.github.io//post-images/1581487804784.png" alt="" loading="lazy"></p>
+<p>2、借助npm包管理器来安装，但是国内镜像元的速度很慢，逆用npm来安装一个cnpm，淘宝的镜像元比较快<br>
+输入这行命令<br>
+<img src="https://lip21504.github.io//post-images/1581488181541.png" alt="" loading="lazy"></p>
+<p>3、安装完之后<br>
+继续输入命令<br>
+<img src="https://lip21504.github.io//post-images/1581488301539.png" alt="" loading="lazy"><br>
+安装完之后的界面<img src="https://lip21504.github.io//post-images/1581488350676.png" alt="" loading="lazy"></p>
+<p>4、建一个新的文件夹，在任何一个盘下叫blog在终端进到这个文件夹里cd blog.之后的所有操作都在这个文件夹下操作的。</p>
+<p>5、用这个命令初始化一个博客<br>
+<img src="https://lip21504.github.io//post-images/1581488621202.png" alt="" loading="lazy"><br>
+如果这部出错了，那就是你没有安装git for Windows</p>
+<p>6、hexo s这条命令就是打开初始化的博客，一般是本地的4000端口，去随便一个浏览器去看就好</p>
+<p>7、写文章的话hexo n一片文章格式如下<br>
+<img src="https://lip21504.github.io//post-images/1581488919412.png" alt="" loading="lazy">然后进到里面<br>
+cd sourse\ _posts\这个目录下dir就可以写了</p>
+<p>8、用户部署github的仓库格式必须是“用户名.github.io“千万不能写别的！！！！后期在浏览器里写这个地址就可以访问了</p>
+
               </div>
-            </a>
-          
-        
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      ZhouXing
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi" title="基于nodejs建立我的第一个静态博客（一）">基于nodejs建立我的第一个静态博客（一）</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="Hello Gridea" href="https://lip21504.github.io/post/hello-gridea">Hello Gridea</a>
+        <a class="nav-mobile-next" title="Hello Gridea" href="https://lip21504.github.io/post/hello-gridea">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+            </div>
           </div>
         </div>
       </div>
