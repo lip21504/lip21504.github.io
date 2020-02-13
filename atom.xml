@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
     <title>ZhouXing</title>
-    <updated>2020-02-13T05:46:18.153Z</updated>
+    <updated>2020-02-13T05:52:32.438Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
@@ -21,10 +21,10 @@
 <p>2、其中要用到git for Windows，直接从百度上搜就可以。https://git-scm.com/download/win</p>
 <p>具体步骤如下：<br>
 1、打开终端，hexo是需要nodejs的支持的，看nodejs的版本及npm（包管理器）的版本确认已经安装<br>
-<img src="https://lip21504.github.io//post-images/1581487804784.png" alt="" loading="lazy"></p>
+<img src="https://lip21504.github.io//post-images/W%7DA7J6UTROR%5DH3%5B8RENL71Q.png" alt="" loading="lazy"></p>
 <p>2、借助npm包管理器来安装，但是国内镜像元的速度很慢，逆用npm来安装一个cnpm，淘宝的镜像元比较快<br>
 输入这行命令<br>
-<img src="https://lip21504.github.io//post-images/1581488181541.png" alt="" loading="lazy"></p>
+![](https://lip21504.github.io//post-images/Z]0M3BMJR33WI}NK(J9D$@X.png)</p>
 <p>3、安装完之后<br>
 继续输入命令<br>
 <img src="https://lip21504.github.io//post-images/1581488301539.png" alt="" loading="lazy"><br>
