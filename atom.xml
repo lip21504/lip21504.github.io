@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
     <title>ZhouXing</title>
-    <updated>2020-02-13T06:17:38.583Z</updated>
+    <updated>2020-02-14T05:58:40.324Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
@@ -10,15 +10,6 @@
     <logo>https://lip21504.github.io/images/avatar.png</logo>
     <icon>https://lip21504.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhouXing</rights>
-    <entry>
-        <title type="html"><![CDATA[测试]]></title>
-        <id>https://lip21504.github.io/post/ce-shi</id>
-        <link href="https://lip21504.github.io/post/ce-shi">
-        </link>
-        <updated>2020-02-13T06:15:03.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://lip21504.github.io//post-images/1581574525217.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[基于nodejs建立我的第一个静态博客（一）]]></title>
         <id>https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi</id>
