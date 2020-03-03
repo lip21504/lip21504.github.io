@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
     <title>ZhouXing</title>
-    <updated>2020-03-03T08:21:22.239Z</updated>
+    <updated>2020-03-03T08:23:01.832Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
@@ -10,6 +10,52 @@
     <logo>https://lip21504.github.io/images/avatar.png</logo>
     <icon>https://lip21504.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhouXing</rights>
+    <entry>
+        <title type="html"><![CDATA[无符号类型]]></title>
+        <id>https://lip21504.github.io/post/wu-fu-hao-lei-xing</id>
+        <link href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">
+        </link>
+        <updated>2020-03-03T07:40:11.000Z</updated>
+        <content type="html"><![CDATA[<p>如果short表示的范围是-32768到+32767，则无符号版本表示的范围是0~65535。仅当数值不会为负数值时才应该使用无符号类型，例如人口等要创建无符号版本的基本范围，只需要使用unsigned来修改声明即可：<br>
+unsigned short change;//unsigned short 类型<br>
+unsigned int change;//unsigned int 类型<br>
+unsigned quarterbac;//还是unsigned int 类型<br>
+**注意unsigned本身就是unsigned int类型的缩写；</p>
+<p>下面程序将演示如何使用无符号类型<br>
+#include <iostream><br>
+#include <climits><br>
+#define ZERO 0<br>
+using namespace std;<br>
+int main()<br>
+{<br>
+short sam = SHRT_MAX;<br>
+unsigned short sue = sam;</p>
+<pre><code>cout&lt;&lt;&quot;sam has&quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+
+cout&lt;&lt;&quot;money deposited&quot;&lt;&lt;endl;
+cout&lt;&lt;&quot;Add 1$each count &quot;&lt;&lt;endl&lt;&lt;&quot; NOW &quot;;
+sam+=1;
+sue+=1;
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot; money deposited \nPoor sam!&quot;&lt;&lt;endl;
+
+sam = ZERO;
+sue = ZERO;
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot;take 1$ from each account.&quot;&lt;&lt;endl&lt;&lt;&quot;NOW &quot;;
+sam-=1;
+sue-=1;
+
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot;LUCK sue!!&quot;&lt;&lt;endl;
+return 0;
+</code></pre>
+<p>}<br>
+运行结果：<br>
+<img src="https://lip21504.github.io//post-images/1583223164368.png" alt="" loading="lazy"></p>
+<p>这个程序将一个short变量（sam）和一个unsigned short变量（sue）分别设置为最大的short值，我们的系统上，是32767.然后将这些变量的值加1，这对sue来说没有什么问题，因为新值仍然比无符号整数的最大值小得多，但是sam加1的值从32767变成-32768！同样将其设置为0并减去1，也不会有问题；但对于无符号变量sue，将其减1变成65535.可以看出如果超越了限制，其值将范围的另一端的取值。c++确保了无符号类型的这种行为，但是c++并不保证符号整形超越限制时不出错，而这正是实现中最常见的行为。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[基于nodejs建立我的第一个静态博客（一）]]></title>
         <id>https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi</id>

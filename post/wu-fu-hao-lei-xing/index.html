@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#222">
-<title>基于nodejs建立我的第一个静态博客（一） | ZhouXing</title>
+<title>无符号类型 | ZhouXing</title>
 <link rel="shortcut icon" href="https://lip21504.github.io//favicon.ico?v=1583223771615">
 <link rel="stylesheet" href="https://lip21504.github.io//styles/main.css">
 
@@ -25,7 +25,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="基于nodejs建立我的第一个静态博客（一）" />
+    <meta name="description" content="无符号类型" />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -296,8 +296,8 @@
               <div class="article-box">
     <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi">
-      基于nodejs建立我的第一个静态博客（一）
+    <a class="post-title-link" href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">
+      无符号类型
     </a>
   </h1>
   <div class="post-meta">
@@ -305,45 +305,60 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-12</span>
+      <span>2020-03-03</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>3分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>468<span class="pc-show">字数</span></span>
+      <span>516<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
 </div>
               <div class="post-body next-md-body" id="post_body">
-                <p>用nodejs搭建博客是我在b站看一个叫CodeSheep的up主发的教程，（顺便说一句，这个up主相当良心滴！）整个搭建过程都是免费，不用购买域名服务器、主机等乱七八糟的东西。但是在开始之前需要准备一下东西：<br>
-1、首先需要注册自己的github的账号，注册很简单去https://github.com 注册，有些使用win系统的童鞋可能会登不进去，这个问题我文章后续会说。如果登不进去先做下一步😄</p>
-<p>2、其中要用到git for Windows，直接从百度上搜就可以。https://git-scm.com/download/win</p>
-<p>具体步骤如下：<br>
-1、打开终端，hexo是需要nodejs的支持的，看nodejs的版本及npm（包管理器）的版本确认已经安装<br>
-<img src="https://lip21504.github.io//post-images/1581573234194.png" alt="" loading="lazy"></p>
-<p>2、借助npm包管理器来安装，但是国内镜像元的速度很慢，逆用npm来安装一个cnpm，淘宝的镜像元比较快<br>
-输入这行命令<br>
-<img src="https://lip21504.github.io//post-images/1581573355284.png" alt="" loading="lazy"></p>
-<p>3、安装完之后<br>
-继续输入命令<br>
-<img src="https://lip21504.github.io//post-images/1581573424410.png" alt="" loading="lazy"><br>
-安装完之后的界面<img src="https://lip21504.github.io//post-images/1581573441126.png" alt="" loading="lazy"></p>
-<p>4、建一个新的文件夹，在任何一个盘下叫blog在终端进到这个文件夹里cd blog.之后的所有操作都在这个文件夹下操作的。</p>
-<p>5、用这个命令初始化一个博客<br>
-<img src="https://lip21504.github.io//post-images/1581573461634.png" alt="" loading="lazy"><br>
-如果这部出错了，那就是你没有安装git for Windows</p>
-<p>6、hexo s这条命令就是打开初始化的博客，一般是本地的4000端口，去随便一个浏览器去看就好</p>
-<p>7、写文章的话hexo n一片文章格式如下<br>
-<img src="https://lip21504.github.io//post-images/1581573492635.png" alt="" loading="lazy"><br>
-然后进到里面<br>
-cd sourse\ _posts\这个目录下dir就可以写了</p>
-<p>8、用户部署github的仓库格式必须是“用户名.github.io“千万不能写别的！！！！后期在浏览器里写这个地址就可以访问了<img src="https://lip21504.github.io//post-images/1581574246700.jpg" alt="" loading="lazy"></p>
+                <p>如果short表示的范围是-32768到+32767，则无符号版本表示的范围是0~65535。仅当数值不会为负数值时才应该使用无符号类型，例如人口等要创建无符号版本的基本范围，只需要使用unsigned来修改声明即可：<br>
+unsigned short change;//unsigned short 类型<br>
+unsigned int change;//unsigned int 类型<br>
+unsigned quarterbac;//还是unsigned int 类型<br>
+**注意unsigned本身就是unsigned int类型的缩写；</p>
+<p>下面程序将演示如何使用无符号类型<br>
+#include <iostream><br>
+#include <climits><br>
+#define ZERO 0<br>
+using namespace std;<br>
+int main()<br>
+{<br>
+short sam = SHRT_MAX;<br>
+unsigned short sue = sam;</p>
+<pre><code>cout&lt;&lt;&quot;sam has&quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+
+cout&lt;&lt;&quot;money deposited&quot;&lt;&lt;endl;
+cout&lt;&lt;&quot;Add 1$each count &quot;&lt;&lt;endl&lt;&lt;&quot; NOW &quot;;
+sam+=1;
+sue+=1;
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot; money deposited \nPoor sam!&quot;&lt;&lt;endl;
+
+sam = ZERO;
+sue = ZERO;
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot;take 1$ from each account.&quot;&lt;&lt;endl&lt;&lt;&quot;NOW &quot;;
+sam-=1;
+sue-=1;
+
+cout&lt;&lt;&quot;sam has &quot;&lt;&lt;sam&lt;&lt;&quot; RMB and sue has &quot;&lt;&lt;sue&lt;&lt;endl;
+cout&lt;&lt;&quot;LUCK sue!!&quot;&lt;&lt;endl;
+return 0;
+</code></pre>
+<p>}<br>
+运行结果：<br>
+<img src="https://lip21504.github.io//post-images/1583223164368.png" alt="" loading="lazy"></p>
+<p>这个程序将一个short变量（sam）和一个unsigned short变量（sue）分别设置为最大的short值，我们的系统上，是32767.然后将这些变量的值加1，这对sue来说没有什么问题，因为新值仍然比无符号整数的最大值小得多，但是sam加1的值从32767变成-32768！同样将其设置为0并减去1，也不会有问题；但对于无符号变量sue，将其减1变成65535.可以看出如果超越了限制，其值将范围的另一端的取值。c++确保了无符号类型的这种行为，但是c++并不保证符号整形超越限制时不出错，而这正是实现中最常见的行为。</p>
 
               </div>
               <div class="post-footer">
@@ -354,7 +369,7 @@ cd sourse\ _posts\这个目录下dir就可以写了</p>
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi" title="基于nodejs建立我的第一个静态博客（一）">基于nodejs建立我的第一个静态博客（一）</a>
+      <a href="https://lip21504.github.io/post/wu-fu-hao-lei-xing" title="无符号类型">无符号类型</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -367,15 +382,11 @@ cd sourse\ _posts\这个目录下dir就可以写了</p>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="无符号类型" href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">无符号类型</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="无符号类型" href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="Hello Gridea" href="https://lip21504.github.io/post/hello-gridea">Hello Gridea</a>
-        <a class="nav-mobile-next" title="Hello Gridea" href="https://lip21504.github.io/post/hello-gridea">下一篇</a>
+        <a class="nav-pc-next" title="基于nodejs建立我的第一个静态博客（一）" href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi">基于nodejs建立我的第一个静态博客（一）</a>
+        <a class="nav-mobile-next" title="基于nodejs建立我的第一个静态博客（一）" href="https://lip21504.github.io/post/ji-yu-nodejs-jian-li-wo-de-di-yi-ge-jing-tai-bo-ke-yi">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
