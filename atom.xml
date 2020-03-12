@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lip21504.github.io/</id>
     <title>ZhouXing</title>
-    <updated>2020-03-12T09:17:29.898Z</updated>
+    <updated>2020-03-12T09:21:00.891Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lip21504.github.io/"/>
     <link rel="self" href="https://lip21504.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://lip21504.github.io/images/avatar.png</logo>
     <icon>https://lip21504.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhouXing</rights>
+    <entry>
+        <title type="html"><![CDATA[c++如何初始化一个指针数组]]></title>
+        <id>https://lip21504.github.io/post/cru-he-chu-shi-hua-yi-ge-zhi-zhen-shu-zu</id>
+        <link href="https://lip21504.github.io/post/cru-he-chu-shi-hua-yi-ge-zhi-zhen-shu-zu">
+        </link>
+        <updated>2020-03-12T09:07:42.000Z</updated>
+        <content type="html"><![CDATA[<p>首先明确一个概念，就是指向数组的指针和存放指针的数组。指向数组的指针：char(*array)[5];含义是一个指向存放5个字符的数组的指针。存放指针的数组 char *array[5];含义是一个数组中存放了5个指向字符型数据的指针。也就是array[0]/array[1]都是char *类型。因此根据题意初始化一个存放指针的数组，char *array[2] = {&quot;China&quot;,&quot;BeiJing&quot;};其含义就是初始化了一个有两个指向字符型数据的指针数组，这两个指针分别指向字符串&quot;China&quot;,&quot;BeiJing&quot;</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[无符号类型]]></title>
         <id>https://lip21504.github.io/post/wu-fu-hao-lei-xing</id>

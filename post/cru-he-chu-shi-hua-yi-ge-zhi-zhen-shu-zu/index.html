@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#222">
-<title>ZhouXing</title>
+<title>c++如何初始化一个指针数组 | ZhouXing</title>
 <link rel="shortcut icon" href="https://lip21504.github.io//favicon.ico?v=1584004852651">
 <link rel="stylesheet" href="https://lip21504.github.io//styles/main.css">
 
@@ -25,6 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
+    <meta name="description" content="c++如何初始化一个指针数组" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -71,7 +73,7 @@
               
             </li>
           
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
                 <a href="/tags">
                   <i class="fa fa-tags"></i> 标签
@@ -122,10 +124,16 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div class="sidebar">
-    
+          
+
+<div class="sidebar">
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://lip21504.github.io//images/avatar.png"/>
@@ -203,84 +211,152 @@
   </div>
 
 </div>
-</div>
-          <div class="section-box box-shadow-wrapper">
-            <section class="section tags-section bg-color posts-expand">
-              <div class="tags-box">
-  <div class="tag-cloud-title">
-    目前共计 1 个标签
-  </div>
-  <div class="tag-cloud-list" id="tags">
-    
-      
-      
         
-      
-        
-      
-        
-      
-        
-          
-            
-      
-      <a class="cloud-tag" href="https://lip21504.github.io/tag/k4Dda91W3" rel="1">Gridea</a>
-    
-  </div>
+      </div>
+    </div>
 </div>
 <script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
 
-  let fontStart = 12, fontEnd = 30, colorStart = '#ccc', colorEnd = '#111';
-  let tags = document.querySelector('#tags').children;
-  let counts = [];
-  for(let i = 0; i < tags.length; i++) {
-    counts.push(tags[i].rel);
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  let lowest = Math.min.apply(null,counts), highest = Math.max.apply(null,counts);;
-  let range = highest - lowest;
-  if (range === 0) {
-    range = 1;
+
+  postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+
+  if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+    let hasFix = false;
+    let scrollEl = document.querySelector('.main-continer');
+    let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+    window.addEventListener('scroll', function(e) {
+    if (document.scrollingElement.scrollTop >= limitTop) {
+      if (!hasFix) {
+        sidebar.classList.add('sidebar-fixed');
+        hasFix = true;
+      }
+    } else {
+      if (hasFix) {
+        sidebar.classList.remove('sidebar-fixed');
+        hasFix = false;
+      }
+    }
+  });
   }
-  let fontIncr, colorIncr;
-  fontIncr = (fontEnd - fontStart) / range;
   
-  let sColorArr = toRGB(colorStart), eColorArr = toRGB(colorEnd);
-
-  for(let i = 0; i < tags.length; i++) {
-    let disCount = tags[i].rel - lowest;
-    let fontSize = fontStart + disCount * fontIncr;
-    let style = 'font-size: ' + fontSize + 'px;';
-    let arr = [];
-    for(let c = 0; c < sColorArr.length; c++) {
-      if (disCount === 0) {
-        disCount = 1;
-      }
-      let val = (sColorArr[c] - eColorArr[c]) / range * disCount;
-      if (val >= 255) {
-        val = eColorArr[c];
-      } else if (val <= 0) {
-        val = sColorArr[c];
-      }
-      arr[c] = Math.floor(255 - val);
-    }
-    style += 'color: ' + toHex(arr);
-    tags[i].style = style;
-  }
-
-  function toRGB(code) {
-    if (code.length === 4) {
-      code = code.replace(/(\w)(\w)(\w)/gi, "\$1\$1\$2\$2\$3\$3");
-    }
-    var hex = /(\w{2})(\w{2})(\w{2})/.exec(code);
-    return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
-  }
-
-  function toHex(ary) {
-    return "#" + ((1 << 24) + (ary[0] << 16) + (ary[1] << 8) + ary[2]).toString(16).slice(1);
-  }
-
 </script>
-            </section>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <div class="article-box">
+    <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://lip21504.github.io/post/cru-he-chu-shi-hua-yi-ge-zhi-zhen-shu-zu">
+      c++如何初始化一个指针数组
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-03-12</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>170<span class="pc-show">字数</span></span>
+    </span>
+  </div>
+</header>
+</div>
+              <div class="post-body next-md-body" id="post_body">
+                <p>首先明确一个概念，就是指向数组的指针和存放指针的数组。指向数组的指针：char(*array)[5];含义是一个指向存放5个字符的数组的指针。存放指针的数组 char *array[5];含义是一个数组中存放了5个指向字符型数据的指针。也就是array[0]/array[1]都是char *类型。因此根据题意初始化一个存放指针的数组，char *array[2] = {&quot;China&quot;,&quot;BeiJing&quot;};其含义就是初始化了一个有两个指向字符型数据的指针数组，这两个指针分别指向字符串&quot;China&quot;,&quot;BeiJing&quot;</p>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      ZhouXing
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lip21504.github.io/post/cru-he-chu-shi-hua-yi-ge-zhi-zhen-shu-zu" title="c++如何初始化一个指针数组">c++如何初始化一个指针数组</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="无符号类型" href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">无符号类型</a>
+        <a class="nav-mobile-next" title="无符号类型" href="https://lip21504.github.io/post/wu-fu-hao-lei-xing">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+            </div>
           </div>
         </div>
       </div>
@@ -481,4 +557,4 @@ var apiKey = landlord.dataset.key;
     </div>
   </body>
   <script src="/media/js/motion.js"></script>
-</html> 
+</html>
